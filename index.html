@@ -6,7 +6,7 @@
   </head>
   <body>
     <h1>Hello</h1>
-      <p id="demo"></p>
+      <p id="countdown"></p>
         <script>
         // Set the date we're counting down to
         var countDownDate = new Date("June 9, 2025 18:00:00").getTime();
@@ -26,14 +26,14 @@
           var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
           var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-          // Display the result in the element with id="demo"
-          document.getElementById("demo").innerHTML = days + "d " + hours + "h "
-          + minutes + "m " + seconds + "s ";
+          // Display the result in the element with id="countdown"
+          document.getElementById("countdown").innerHTML = days + "days " + hours + "hours "
+          + minutes + "minutes " + seconds + "seconds ";
 
           // If the count down is finished, write some text
           if (distance < 0) {
             clearInterval(x);
-            document.getElementById("demo").innerHTML = "done!!";
+            document.getElementById("countdown").innerHTML = "done!!";
           }
         }, 1000);
         </script>
