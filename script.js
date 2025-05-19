@@ -1,1 +1,31 @@
 console.log("hello");
+
+// set the date 
+var countDownDate = new Date("June 9, 2025 18:00:00").getTime();
+
+// countdown every second
+var x = setInterval(function() {
+
+// get current time from browser
+var now = new Date().getTime();
+
+// calculate the time diff between today and june 9
+var distance = countDownDate - now;
+
+// time calculations 
+var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+// display the results with id "countdown"
+document.getElementById("countdown").innerHTML = days + " days " + hours + " hours "
++ minutes + " minutes " + seconds + " seconds "; 
+// make sure you include a space before and after the word or else it looks weird
+
+// when the countdown is over display something else "done!!"
+if (distance < 0) {
+clearInterval(x);
+document.getElementById("countdown").innerHTML = "done!!";
+}
+}, 1000);
