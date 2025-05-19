@@ -2,41 +2,43 @@
 <html lang="en">
   <head>
     <title>AP CSP Assignment</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"> // todo create styling
+    // center countdown with black background white text and nice font 
   </head>
   <body>
     <h1>Countdown</h1>
       <h2 id="countdown"></h2>
         <script>
-        // Set the date we're counting down to
+        // set the date 
         var countDownDate = new Date("June 9, 2025 18:00:00").getTime();
 
-        // Update the count down every 1 second
+        // countdown every second
         var x = setInterval(function() {
 
-          // Get today's date and time
+          // get current time from browser
           var now = new Date().getTime();
 
-          // Find the distance between now and the count down date
+          // calculate the time diff between today and june 9
           var distance = countDownDate - now;
 
-          // Time calculations for days, hours, minutes and seconds
+          // time calculations 
           var days = Math.floor(distance / (1000 * 60 * 60 * 24));
           var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
           var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-          // Display the result in the element with id="countdown"
+          // display the results with id "countdown"
           document.getElementById("countdown").innerHTML = days + " days " + hours + " hours "
-          + minutes + " minutes " + seconds + " seconds ";
+          + minutes + " minutes " + seconds + " seconds "; 
+          // make sure you include a space before and after the word or else it looks weird
 
-          // If the count down is finished, write some text
+          // when the countdown is over display something else "done!!"
           if (distance < 0) {
             clearInterval(x);
             document.getElementById("countdown").innerHTML = "done!!";
           }
         }, 1000);
         </script>
-    <script src="./script.js"></script>
+    <script src="./script.js"></script> // demo script remove later
   </body>
 </html>
