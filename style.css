@@ -1,21 +1,42 @@
 body {
-  background-color: black
+  background-color: black;
 }
 
 h1 {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 140px
+  font-size: 140px;
+  margin: 0;
+}
+
+#countdown {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.time-block {
+  text-align: center;
+}
+
+.number {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 110px;
+  margin: 0;
+}
+
+.label {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30px;
+  margin: 0;
 }
 
 h2 {
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 110px
+  font-size: 110px;
+  margin: 0;
 }
-
-/* todo: make the day/second/etc appear at the bottom of the time  */
-/* 
-21     12        5 
-days   seconds   minutes
-*/
