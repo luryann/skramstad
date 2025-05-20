@@ -1,31 +1,40 @@
 console.log("hello");
 
-// set the date 
 var countDownDate = new Date("June 9, 2025 18:00:00").getTime();
 
-// countdown every second
-var x = setInterval(function() {
+// Get all elements
+const daysElement = document.getElementById("days");
+const hoursElement = document.getElementById("hours");
+const minutesElement = document.getElementById("minutes");
+const secondsElement = document.getElementById("seconds");
+const daysLabel = document.getElementById("daysLabel");
+const hoursLabel = document.getElementById("hoursLabel");
+const minutesLabel = document.getElementById("minutesLabel");
+const secondsLabel = document.getElementById("secondsLabel");
 
-// get current time from browser
-var now = new Date().getTime();
+const x = setInterval(function() {
+  const now = new Date().getTime();
+  const distance = countDownDate - now;
 
-// calculate the time diff between today and june 9
-var distance = countDownDate - now;
+  const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-// time calculations 
-var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  // Update numbers
+  daysElement.textContent = days;
+  hoursElement.textContent = hours;
+  minutesElement.textContent = minutes;
+  secondsElement.textContent = seconds;
 
-// display the results with id "countdown"
-document.getElementById("countdown").innerHTML = days + " days " + hours + " hours "
-+ minutes + " minutes " + seconds + " seconds "; 
-// make sure you include a space before and after the word or else it looks weird
+  // Update labels with correct pluralization
+  daysLabel.textContent = days === 1 ? "day" : "days";
+  hoursLabel.textContent = hours === 1 ? "hour" : "hours";
+  minutesLabel.textContent = minutes === 1 ? "minute" : "minutes";
+  secondsLabel.textContent = seconds === 1 ? "second" : "seconds";
 
-// when the countdown is over display something else "done!!"
-if (distance < 0) {
-clearInterval(x);
-document.getElementById("countdown").innerHTML = "done!!";
-}
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("countdown").innerHTML = "<h2>done!!</h2>";
+  }
 }, 1000);
