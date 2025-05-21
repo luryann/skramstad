@@ -27,6 +27,12 @@ const x = setInterval(function() {
   minutesElement.textContent = minutes;
   secondsElement.textContent = seconds;
 
+  // Pad numbers with zero if required
+  daysElement.textContent = String(days).padStart(2, '0');
+  hoursElement.textContent = String(hours).padStart(2, '0');
+  minutesElement.textContent = String(minutes).padStart(2, '0');
+  secondsElement.textContent = String(seconds).padStart(2, '0');
+  
   // Update labels with correct pluralization
   daysLabel.textContent = days === 1 ? "day" : "days";
   hoursLabel.textContent = hours === 1 ? "hour" : "hours";
@@ -38,3 +44,7 @@ const x = setInterval(function() {
     document.getElementById("countdown").innerHTML = "<h2>done!!</h2>";
   }
 }, 1000);
+
+
+
+function convertNumber
