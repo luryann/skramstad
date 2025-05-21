@@ -23,6 +23,7 @@ let seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
 // Pad numbers with leading zeros if needed
 daysElement.textContent = String(days).padStart(2, '0');
+daysElement.textContent = convert(days);
 hoursElement.textContent = String(hours).padStart(2, '0');
 minutesElement.textContent = String(minutes).padStart(2, '0');
 secondsElement.textContent = String(seconds).padStart(2, '0');
@@ -38,3 +39,12 @@ clearInterval(x);
 document.getElementById("countdown").innerHTML = "<h2>Graduated!</h2>";
 }
 }, 1000);
+
+function convert(num) {
+    if (num < 10) {
+        return "0" + num;
+    }
+    else  {
+        return num;
+    }
+}
