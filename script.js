@@ -36,7 +36,7 @@ secondsLabel.textContent = seconds === 1 ? "second" : "seconds";
 
 if (distance < 0) {
 clearInterval(x);
-document.getElementById("countdown").innerHTML = "<h2>Graduated!</h2>";
+document.getElementById("countdown").innerHTML = "<h2>Get out!</h2>";
 }
 }, 1000);
 
