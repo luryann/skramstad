@@ -1,5 +1,6 @@
 console.log("hello");
 
+// Define the date here
 var countDownDate = new Date("June 9, 2025 18:00:00").getTime();
 
 // Get all elements
